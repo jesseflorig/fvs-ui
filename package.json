@@ -9,7 +9,10 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
+    "buffer": "^6.0.3",
     "framer-motion": "^6.5.1",
+    "mqtt": "^4.3.7",
+    "mqtt-pattern": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^3.11.0",
@@ -17,7 +20,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "//": "Replace 'en0' with your default interface - usually eth0",
+    "start": "REACT_APP_LOCAL_IP=$(ifconfig en0 | grep -i mask | awk '{print $2}') react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
