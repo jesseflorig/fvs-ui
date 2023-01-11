@@ -21,7 +21,7 @@
   },
   "scripts": {
     "//": "Replace 'en0' with your default interface - usually eth0",
-    "start": "REACT_APP_LOCAL_IP=$(ifconfig en0 | grep -i mask | awk '{print $2}') react-scripts start",
+    "start": "REACT_APP_LOCAL_IP=$(ifconfig en0 | grep -i mask | awk '{print $2}') PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
