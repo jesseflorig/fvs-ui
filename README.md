@@ -16,3 +16,18 @@ You may also need to update the environment vairable being set on the `start` sc
                                         ^^^
 ```
 Replace `en0` with your machine's default interface (usually `eth0`). The application could be setup to use `localhost` if you're MQTT broker is running locally, however this still breaks if you want to test your UI on other devices on the network.
+
+## Roadmap
+
+### Components
+- [x] MqttContext - _React createContext wrapper_
+- [x] MqttProvider - _Context provider for MqttContext_
+
+#### Controls
+- [ ] LightControl
+- [ ] RgbLightControl
+- [ ] DoorControl
+
+### Utility Hooks
+- [x] useMqttState - _React useContext wrapper_
+- [x] useMqttSubscription - _mqtt subscription hook_
