@@ -12,6 +12,9 @@ export default function ConnectionStatus(){
     switch(status){
       case 'connected':
         return "green.500"
+      case 'connecting':
+      case 'reconnecting':
+        return "yellow.500"
       default:
         return "red.500"
     }
