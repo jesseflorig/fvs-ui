@@ -30,8 +30,8 @@ function App() {
             <ColorModeSwitcher justifySelf="flex-end" />
             <VStack spacing={2}>
               <ConnectionStatus />
-              <PublishButton label="Open Door" topic="door/" message={{state: "open"}} />
-              <PublishButton label="Close Door" topic="door/" message={{state: "closed"}} />
+              <PublishButton label="Open Door" topic="door/" message={{open: 1}} />
+              <PublishButton label="Close Door" topic="door/" message={{open: 0}} />
               <Light />
             </VStack>
           </Grid>

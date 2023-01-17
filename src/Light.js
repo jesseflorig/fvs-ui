@@ -13,7 +13,7 @@ import useMqttSubscription from './useMqttSubscription'
 export default function Light(){
   const { message } = useMqttSubscription('light/')
   
-  const lightColor = message?.payload.state === "on" ? "yellow.500" : "gray.500"
+  const lightColor = message?.payload.on ? "yellow.500" : "gray.500"
 
   return (
     <Card>
