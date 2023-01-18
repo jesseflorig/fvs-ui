@@ -1,5 +1,6 @@
 import { 
   Flex,
+  Heading,
   Text,
   VStack
 } from '@chakra-ui/react'
@@ -9,6 +10,7 @@ import ConnectionStatus from './ConnectionStatus'
 function LayoutHeading(){
   return (
     <Flex py={2} px={4} justify="space-between">
+      <Heading>FLEET 1</Heading>
       <ConnectionStatus />
       <ColorModeSwitcher />
     </Flex>
