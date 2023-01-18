@@ -1,17 +1,13 @@
 import React from 'react';
-//import { connect } from 'mqtt/dist/mqtt'
 import {
   ChakraProvider,
-  Box,
-  VStack,
-  Grid,
+  Stack,
   theme,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
+import Layout from './Layout'
 import MqttProvider from './MqttProvider'
-import ConnectionStatus from './ConnectionStatus'
-import PublishButton from './PublishButton'
-import Light from './Light'
+import Doors from './Doors'
+import Rooms from './Rooms'
 
 function App() {
   const {
@@ -25,17 +21,12 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <MqttProvider url={`ws://${LOCAL_IP}:${WS_PORT}`} opts={opts}>
-        <Box textAlign="center" fontSize="xl">
-          <Grid minH="100vh" p={3}>
-            <ColorModeSwitcher justifySelf="flex-end" />
-            <VStack spacing={2}>
-              <ConnectionStatus />
-              <PublishButton label="Open Door" topic="door/" message={{open: 1}} />
-              <PublishButton label="Close Door" topic="door/" message={{open: 0}} />
-              <Light />
-            </VStack>
-          </Grid>
-        </Box>
+        <Layout>
+          <Stack>
+          <Doors />
+          <Rooms />
+          </Stack>
+        </Layout>
       </MqttProvider>
     </ChakraProvider>
   );
