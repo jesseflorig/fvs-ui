@@ -1,32 +1,19 @@
-import React from 'react'
 import {
-  Card,
-  CardBody,
-  CardHeader,
-  Circle,
-  Heading,
-  Text,
-  VStack
-} from '@chakra-ui/react'
+  FaLightbulb,
+  FaRegLightbulb
+} from 'react-icons/fa'
+import PublishButton from './PublishButton'
 import useMqttSubscription from './useMqttSubscription'
 
-export default function Light(){
-  const { message } = useMqttSubscription('light/')
+export default function Light({label, topic}){
+  const { message } = useMqttSubscription(topic)
   
-  const lightColor = message?.payload.on ? "yellow.500" : "gray.500"
-  const lightLabel = message?.payload.on ? "On" : "Off"
+  const on = message?.payload.on
+  const scheme = on ? "yellow" : null
+  const toggleValue = on ? 0 : 1
+  const lightIcon = on ? <FaLightbulb /> : <FaRegLightbulb />
 
   return (
-    <Card w={32}>
-      <CardHeader>
-        <Heading size="xs">Light</Heading>
-      </CardHeader>
-      <CardBody>
-        <VStack justifyContent="center">
-          <Circle size={12} bg={lightColor}/>
-          <Text textTransform="uppercase">{lightLabel}</Text>
-        </VStack>
-      </CardBody>
-    </Card>
+    <PublishButton leftIcon={lightIcon} label={label} colorScheme={scheme} topic={topic} message={{on: toggleValue}} />
   )
 }

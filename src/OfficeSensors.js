@@ -3,7 +3,7 @@ import Light from './Light'
 export default function OfficeSensors(){
   return (
     <>
-      <Light />
+    <Light label="Overhead" topic="light/" />
     </>
   )
 }
