@@ -2,7 +2,7 @@ import { Buffer } from 'buffer'
 import useMqttState from './useMqttState'
 import { Button } from '@chakra-ui/react'
 
-export default function PublishButton({label, topic, message}){
+export default function PublishButton({label, topic, message, ...props}){
   const { client } = useMqttState()
 
   function handleClick() {
@@ -11,6 +11,6 @@ export default function PublishButton({label, topic, message}){
   }
 
   return (
-    <Button onClick={handleClick}>{label}</Button>
+    <Button onClick={handleClick} {...props}>{label}</Button>
   )
 }
