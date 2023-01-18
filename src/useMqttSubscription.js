@@ -22,10 +22,11 @@ export default function useMqttSubscription(topic, opts = {}){
   React.useEffect(() => {
     if(client?.connected){
       subscribe()
-      client.once('message', messageCallback)
+      client.addListener('message', messageCallback)
     }
 
     return () => {
+      client?.removeListener('message', messageCallback)
       client?.unsubscribe(topic)
     }
   }, [messageCallback, client, subscribe, topic])
