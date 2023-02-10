@@ -1,4 +1,5 @@
 import OfficeSensors from './OfficeSensors'
+import HallSensors from './HallSensors'
 
 export const rooms = [
   {
@@ -11,7 +12,7 @@ export const rooms = [
   }, 
   {
     name:"hall",
-    children: null
+    children: <HallSensors />
   }, 
   {
     name:"bathroom",
