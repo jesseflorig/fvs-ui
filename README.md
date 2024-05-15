@@ -1,6 +1,6 @@
 # [WIP] FVS UI
 
-The user interface library for Fleet Van Systems. The library consists of Dashboard UI components for a variety of "smart van" sensor types and utility hooks for interacting with MQTT brokers. At the moment this is not intended to be a low-code solution
+The user interface framework for Fleet Van Systems. The framework consists of Dashboard UI components for a variety of "smart van" sensor types and utility hooks for interacting with MQTT brokers.
 
 ## Setup
 Clone the repo and create a `.env.local` based on `.env.example`
