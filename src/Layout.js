@@ -18,9 +18,11 @@ function LayoutHeading(){
 }
 
 function LayoutFooter(){
+  const currentYear = () => new Date().getFullYear();
+
   return (
       <Flex py={6} px={4} align="center" justify="center">
-        <Text>Footer</Text>
+        <Text>Fleet Van Systems &copy; {currentYear()}</Text>
       </Flex>
   )
 }
