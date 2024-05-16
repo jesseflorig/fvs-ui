@@ -4,8 +4,9 @@ import Light from './Light'
 export default function OfficeSensors(){
   return (
     <HStack>
-      <Light label="Pico" topic="fleet1/pico/light/" />
-      <Light label="LED" topic="fleet1/pico/light2/" />
+      <Light label="Overhead" topic="fleet1/interior/hall/overheadLight" />
+      <Light label="Counter" topic="fleet1/interior/hall/counterLight" />
+      <Light label="Toekick" topic="fleet1/interior/hall/toeLight" />
     </HStack>
   )
 }
